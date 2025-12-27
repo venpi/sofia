@@ -5,8 +5,8 @@
 ## Read / Чети
 Start here / Начало: [index.html](index.html)
 
-- English: [English](sophia_and_her_three_daughters_edited.html)
-- Български: [Български](sofia_i_trite_i_dashteri_bg_edited.html)
+- English: [English](sophia_and_her_three_daughters_eng.html)
+- Български: [Български](sofia_i_trite_i_dashteri_bg.html)
 
 
 ## License
