@@ -3,10 +3,11 @@
 Днес мислих за числа, стигнах до ясна посока с неизвестни дестинации… и приказка.
 
 ## Read / Чети
-Start here / Начало: `index.html`
+Start here / Начало: [index.html](sophia/index.html)
 
-- English: `sophia_and_her_three_daughters_edited.html`
-- Български: `sofia_i_trite_i_dashteri_bg_edited.html`
+- English: [English](sophia/sophia_and_her_three_daughters_edited.html)
+- Български: [Български](sophia/sofia_i_trite_i_dashteri_bg_edited.html)
+
 
 ## License
 CC0-1.0 (Public Domain Dedication).
