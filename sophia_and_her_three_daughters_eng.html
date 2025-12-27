@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sophia and Her Three Daughters</title>
+	<meta name="description" content="A Meditation">
+	<meta name="color-scheme" content="light dark">
+	<style>
+:root{
+	--bg: #f7f5f1;
+	--paper: rgba(255,255,255,0.78);
+	--ink: #161616;
+	--muted: rgba(22,22,22,0.72);
+	--hairline: rgba(22,22,22,0.14);
+	--accent: #2a5d86;
+	--shadow: 0 18px 60px rgba(0,0,0,0.10);
+	--radius: 18px;
+	--maxw: 760px;
+	--serif: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, Times, serif;
+	--sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark){
+	:root{
+		--bg: #0c0d10;
+		--paper: rgba(18,19,24,0.78);
+		--ink: #f2f2f2;
+		--muted: rgba(242,242,242,0.72);
+		--hairline: rgba(242,242,242,0.14);
+		--accent: #79b7ff;
+		--shadow: 0 18px 60px rgba(0,0,0,0.55);
+	}
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	background:
+		radial-gradient(1200px 600px at 15% 10%, rgba(42,93,134,0.14), transparent 55%),
+		radial-gradient(900px 500px at 90% 20%, rgba(215,121,32,0.10), transparent 60%),
+		radial-gradient(900px 500px at 70% 90%, rgba(70,160,120,0.10), transparent 60%),
+		var(--bg);
+	color: var(--ink);
+	font-family: var(--serif);
+	line-height: 1.75;
+	letter-spacing: 0.01em;
+}
+
+a{color: var(--accent); text-decoration: none}
+a:hover{text-decoration: underline}
+a:focus{outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 10px}
+
+.wrap{
+	max-width: calc(var(--maxw) + 64px);
+	margin: 0 auto;
+	padding: 40px 22px 60px;
+}
+
+.card{
+	max-width: var(--maxw);
+	margin: 0 auto;
+	padding: 46px 46px 28px;
+	background: var(--paper);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid var(--hairline);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+}
+
+@media (max-width: 720px){
+	.card{padding: 34px 22px 22px}
+	.wrap{padding: 26px 14px 44px}
+}
+
+.header{
+	text-align:center;
+	margin-bottom: 20px;
+}
+
+.title{
+	font-family: var(--serif);
+	font-weight: 600;
+	font-size: clamp(2.0rem, 3.4vw, 3.0rem);
+	letter-spacing: -0.01em;
+	margin: 0;
+}
+
+.subtitle{
+	font-family: var(--sans);
+	font-weight: 500;
+	color: var(--muted);
+	font-size: 1.05rem;
+	margin: 10px 0 0;
+}
+
+.rule{
+	width: 120px;
+	margin: 22px auto 8px;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, var(--hairline), transparent);
+}
+
+.toc{
+	display:flex;
+	align-items: baseline;
+	gap: 14px;
+	justify-content:center;
+	margin: 18px 0 26px;
+	flex-wrap: wrap;
+}
+
+.toc-label{
+	font-family: var(--sans);
+	font-size: 0.88rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+.toc-links{
+	display:flex;
+	gap: 12px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.toc-links a{
+	font-family: var(--sans);
+	font-size: 0.95rem;
+	padding: 6px 10px;
+	border-radius: 999px;
+	border: 1px solid var(--hairline);
+	background: rgba(255,255,255,0.12);
+}
+
+@media (prefers-color-scheme: dark){
+	.toc-links a{background: rgba(0,0,0,0.20)}
+}
+
+.section{
+	margin-top: 10px;
+	scroll-margin-top: 22px;
+}
+
+.section-head{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin: 26px 0 12px;
+}
+
+.section-num{
+	font-family: var(--sans);
+	font-size: 0.95rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--muted);
+	margin: 0;
+	padding: 6px 14px;
+	border-radius: 999px;
+	border: 1px solid var(--hairline);
+	background: rgba(255,255,255,0.10);
+}
+
+@media (prefers-color-scheme: dark){
+	.section-num{background: rgba(0,0,0,0.22)}
+}
+
+.section-body{
+	margin-top: 12px;
+}
+
+.para{
+	margin: 0 0 14px;
+	font-size: 1.06rem;
+}
+
+.para.first::first-letter{
+	float:left;
+	font-size: 3.3rem;
+	line-height: 0.9;
+	padding: 10px 10px 0 0;
+	font-weight: 600;
+	color: var(--ink);
+}
+
+.divider{
+	text-align:center;
+	letter-spacing: 0.35em;
+	color: var(--muted);
+	margin: 18px 0 10px;
+	user-select: none;
+}
+
+.footer{
+	margin-top: 18px;
+	padding-top: 18px;
+	border-top: 1px solid var(--hairline);
+	color: var(--muted);
+	font-family: var(--sans);
+	font-size: 0.95rem;
+	text-align:center;
+}
+
+.footer em{
+	font-style: normal;
+	font-family: var(--serif);
+	color: var(--ink);
+}
+
+.small{
+	font-size: 0.85rem;
+	opacity: 0.85;
+}
+
+.backtop{
+	position: fixed;
+	right: 18px;
+	bottom: 18px;
+	z-index: 10;
+	display: inline-flex;
+	align-items:center;
+	gap: 8px;
+	padding: 10px 12px;
+	border-radius: 999px;
+	border: 1px solid var(--hairline);
+	background: rgba(255,255,255,0.55);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+	font-family: var(--sans);
+	font-size: 0.9rem;
+	color: var(--ink);
+	text-decoration:none;
+}
+
+@media (prefers-color-scheme: dark){
+	.backtop{background: rgba(10,10,12,0.55); box-shadow: 0 10px 36px rgba(0,0,0,0.55)}
+}
+
+.backtop:hover{transform: translateY(-1px)}
+.backtop:active{transform: translateY(0px)}
+.backtop span{opacity: 0.85}
+</style>
+</head>
+<body>
+	<a class="backtop" href="#top" aria-label="Back to top">
+		<span>↑</span> Top
+	</a>
+
+	<div class="wrap" id="top">
+		<main class="card" role="main">
+			<header class="header">
+				<h1 class="title">Sophia and Her Three Daughters</h1>
+				<p class="subtitle">A Meditation</p>
+				<div class="rule" aria-hidden="true"></div>
+			</header>
+
+			
+		<nav class="toc" aria-label="Table of contents">
+			<div class="toc-label">Sections</div>
+			<div class="toc-links">
+				<a href="#i">I.</a>
+<a href="#ii">II.</a>
+<a href="#iii">III.</a>
+<a href="#iv">IV.</a>
+<a href="#v">V.</a>
+			</div>
+		</nav>
+	
+
+			
+		<section class="section" id="i">
+			<div class="section-head">
+				<h2 class="section-num" aria-label="Section I">I.</h2>
+			</div>
+			<div class="section-body">
+				<p class="para first">A young man from the future came upon Sophia at the edge of a river.</p><p class="para">“I have read many books,” he said. “I can explain and name many things. But when the page closes, something in me stays restless. I don’t feel wise.”</p><p class="para">Sophia threw a stone into the water. They watched the ripples unfold and fall quiet.</p><p class="para">Downstream, a fish startled. A bird dove. A branch trembled. Another stone fell from the bank.</p><p class="para">New ripples.</p><p class="para">Sophia stayed silent. The young man stared at the water for a long while. Then he looked up.</p><p class="para">“Which stone caused which ripples?”</p><p class="para">She rose. “Come. I have three daughters.”</p>
+			</div>
+			<div class="divider" aria-hidden="true">◆&nbsp;&nbsp;◆&nbsp;&nbsp;◆</div>
+		</section>
+	
+		<section class="section" id="ii">
+			<div class="section-head">
+				<h2 class="section-num" aria-label="Section II">II.</h2>
+			</div>
+			<div class="section-body">
+				<p class="para first">In a field, a woman knelt in the soil and planted seeds. Her hands were rough. She was smiling.</p><p class="para">“My daughter Faith,” said Sophia.</p><p class="para">The young man watched. “How does she know they’ll grow?”</p><p class="para">Faith held out a seed to him. He took it. Tiny, dry, almost lifeless.</p><p class="para">She returned to her work.</p><p class="para">He stood there, the seed in his palm. It was so small it could hide under his thumbnail. After a while, he knelt and pressed it into the earth. This felt irrational, yet his knees had already found the ground. He didn’t know why. But his hands did.</p><p class="para">When he looked up, Faith was still smiling.</p>
+			</div>
+			<div class="divider" aria-hidden="true">◆&nbsp;&nbsp;◆&nbsp;&nbsp;◆</div>
+		</section>
+	
+		<section class="section" id="iii">
+			<div class="section-head">
+				<h2 class="section-num" aria-label="Section III">III.</h2>
+			</div>
+			<div class="section-body">
+				<p class="para first">A woman watched the sunset from the window of a house. Orange flowed into purple.</p><p class="para">“My daughter Hope,” said Sophia.</p><p class="para">“What is she looking at?”</p><p class="para">“Ask her.”</p><p class="para">He approached. “What do you see?”</p><p class="para">Hope didn’t turn. “I don’t know yet.”</p><p class="para">The sun sank lower. The colors deepened. He found himself watching too.</p><p class="para">“The sun looks like it’s dying,” he said.</p><p class="para">Hope said nothing. They watched until the last light disappeared.</p><p class="para">In the darkness, she finally spoke. “Stay until morning,” she said. “Some truths won’t come when you call them.”</p>
+			</div>
+			<div class="divider" aria-hidden="true">◆&nbsp;&nbsp;◆&nbsp;&nbsp;◆</div>
+		</section>
+	
+		<section class="section" id="iv">
+			<div class="section-head">
+				<h2 class="section-num" aria-label="Section IV">IV.</h2>
+			</div>
+			<div class="section-body">
+				<p class="para first">In a moonlit garden, a woman sat among flowers. She sat and breathed. That was all.</p><p class="para">“My daughter Love,” said Sophia.</p><p class="para">The young man hesitated. Love looked so at ease that he worried he’d bring noise into the garden.</p><p class="para">She opened her eyes, smiled, and patted the ground beside her.</p><p class="para">He sat.</p><p class="para">A moth moved from flower to flower. An owl called. Another answered. The moon rose higher.</p><p class="para">He realized he had stopped thinking about the past. He had stopped rehearsing the future. He was just here. This garden. This moment.</p><p class="para">Love picked a flower and handed it to him. Its petals were soft against his fingers.</p><p class="para">Neither spoke. There was no need to say anything.</p>
+			</div>
+			<div class="divider" aria-hidden="true">◆&nbsp;&nbsp;◆&nbsp;&nbsp;◆</div>
+		</section>
+	
+		<section class="section" id="v">
+			<div class="section-head">
+				<h2 class="section-num" aria-label="Section V">V.</h2>
+			</div>
+			<div class="section-body">
+				<p class="para first">They returned to the river. The water was dark now, reflecting stars. Two skies: one above, one below.</p><p class="para">Sophia picked up three stones and dropped them, one by one. The ripples spread, met, and made patterns no single stone could make alone.</p><p class="para">The young man watched.</p><p class="para">“I think I understand,” he said slowly. “Faith trusts the process. Hope stays open to what it might bring. Love participates in it fully.”</p><p class="para">Sophia waited.</p><p class="para">“And you,” he began, then paused. “You help me see the process itself.”</p><p class="para">She said nothing. But something in her silence felt like a yes.</p><p class="para">He picked up a stone, turned it in his fingers. “I came here looking for answers outside the process.”</p><p class="para">He dropped it in the water.</p><p class="para">“But I’m in the river too. Aren’t I?”</p><p class="para">Dawn was breaking. The sky turned from black to blue, from blue to gold.</p><p class="para">When he turned, Sophia was gone.</p><p class="para">Or perhaps she was everywhere: in the light on the water, in the hush between his thoughts, in the feeling of being alive on a new morning.</p><p class="para">He stayed by the river a while longer, watching the ripples fade.</p><p class="para">Then he rose and walked back into the world.</p>
+</div>
+			<div class="divider" aria-hidden="true">◆&nbsp;&nbsp;◆&nbsp;&nbsp;◆</div>
+		</section>
+	
+
+			<footer class="footer">
+				<div class="small">HTML edition generated 2025-12-27.</div>
+			</footer>
+		</main>
+	</div>
+
+	<script>
+(function(){
+	const btn = document.querySelector('.backtop');
+	const toggle = () => {
+		const y = window.scrollY || document.documentElement.scrollTop;
+		btn.style.opacity = y > 420 ? '1' : '0';
+		btn.style.pointerEvents = y > 420 ? 'auto' : 'none';
+	};
+	toggle();
+	window.addEventListener('scroll', toggle, {passive:true});
+})();
+</script>
+</body>
+</html>

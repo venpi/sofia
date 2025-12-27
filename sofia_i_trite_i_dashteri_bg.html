@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="bg">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>София и трите ѝ дъщери</title>
+	<meta name="description" content="Медитация">
+	<meta name="color-scheme" content="light dark">
+	<style>
+:root{
+	--bg: #f7f5f1;
+	--paper: rgba(255,255,255,0.78);
+	--ink: #161616;
+	--muted: rgba(22,22,22,0.72);
+	--hairline: rgba(22,22,22,0.14);
+	--accent: #2a5d86;
+	--shadow: 0 18px 60px rgba(0,0,0,0.10);
+	--radius: 18px;
+	--maxw: 760px;
+	--serif: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, Times, serif;
+	--sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark){
+	:root{
+		--bg: #0c0d10;
+		--paper: rgba(18,19,24,0.78);
+		--ink: #f2f2f2;
+		--muted: rgba(242,242,242,0.72);
+		--hairline: rgba(242,242,242,0.14);
+		--accent: #79b7ff;
+		--shadow: 0 18px 60px rgba(0,0,0,0.55);
+	}
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	background:
+		radial-gradient(1200px 600px at 15% 10%, rgba(42,93,134,0.14), transparent 55%),
+		radial-gradient(900px 500px at 90% 20%, rgba(215,121,32,0.10), transparent 60%),
+		radial-gradient(900px 500px at 70% 90%, rgba(70,160,120,0.10), transparent 60%),
+		var(--bg);
+	color: var(--ink);
+	font-family: var(--serif);
+	line-height: 1.75;
+	letter-spacing: 0.01em;
+}
+
+a{color: var(--accent); text-decoration: none}
+a:hover{text-decoration: underline}
+a:focus{outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 10px}
+
+.wrap{
+	max-width: calc(var(--maxw) + 64px);
+	margin: 0 auto;
+	padding: 40px 22px 60px;
+}
+
+.card{
+	max-width: var(--maxw);
+	margin: 0 auto;
+	padding: 46px 46px 28px;
+	background: var(--paper);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid var(--hairline);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+}
+
+@media (max-width: 720px){
+	.card{padding: 34px 22px 22px}
+	.wrap{padding: 26px 14px 44px}
+}
+
+.header{
+	text-align:center;
+	margin-bottom: 20px;
+}
+
+.title{
+	font-family: var(--serif);
+	font-weight: 600;
+	font-size: clamp(2.0rem, 3.4vw, 3.0rem);
+	letter-spacing: -0.01em;
+	margin: 0;
+}
+
+.subtitle{
+	font-family: var(--sans);
+	font-weight: 500;
+	color: var(--muted);
+	font-size: 1.05rem;
+	margin: 10px 0 0;
+}
+
+.rule{
+	width: 120px;
+	margin: 22px auto 8px;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, var(--hairline), transparent);
+}
+
+.toc{
+	display:flex;
+	align-items: baseline;
+	gap: 14px;
+	justify-content:center;
+	margin: 18px 0 26px;
+	flex-wrap: wrap;
+}
+
+.toc-label{
+	font-family: var(--sans);
+	font-size: 0.88rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+.toc-links{
+	display:flex;
+	gap: 12px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.toc-links a{
+	font-family: var(--sans);
+	font-size: 0.95rem;
+	padding: 6px 10px;
+	border-radius: 999px;
+	border: 1px solid var(--hairline);
+	background: rgba(255,255,255,0.12);
+}
+
+@media (prefers-color-scheme: dark){
+	.toc-links a{background: rgba(0,0,0,0.20)}
+}
+
+.section{
+	margin-top: 10px;
+	scroll-margin-top: 22px;
+}
+
+.section-head{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin: 26px 0 12px;
+}
+
+.section-num{
+	font-family: var(--sans);
+	font-size: 0.95rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--muted);
+	margin: 0;
+	padding: 6px 14px;
+	border-radius: 999px;
+	border: 1px solid var(--hairline);
+	background: rgba(255,255,255,0.10);
+}
+
+@media (prefers-color-scheme: dark){
+	.section-num{background: rgba(0,0,0,0.22)}
+}
+
+.section-body{
+	margin-top: 12px;
+}
+
+.para{
+	margin: 0 0 14px;
+	font-size: 1.06rem;
+}
+
+.para.first::first-letter{
+	float:left;
+	font-size: 3.3rem;
+	line-height: 0.9;
+	padding: 10px 10px 0 0;
+	font-weight: 600;
+	color: var(--ink);
+}
+
+.divider{
+	text-align:center;
+	letter-spacing: 0.35em;
+	color: var(--muted);
+	margin: 18px 0 10px;
+	user-select: none;
+}
+
+.footer{
+	margin-top: 18px;
+	padding-top: 18px;
+	border-top: 1px solid var(--hairline);
+	color: var(--muted);
+	font-family: var(--sans);
+	font-size: 0.95rem;
+	text-align:center;
+}
+
+.small{
+	font-size: 0.85rem;
+	opacity: 0.85;
+}
+
+.backtop{
+	position: fixed;
+	right: 18px;
+	bottom: 18px;
+	z-index: 10;
+	display: inline-flex;
+	align-items:center;
+	gap: 8px;
+	padding: 10px 12px;
+	border-radius: 999px;
+	border: 1px solid var(--hairline);
+	background: rgba(255,255,255,0.55);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+	font-family: var(--sans);
+	font-size: 0.9rem;
+	color: var(--ink);
+	text-decoration:none;
+}
+
+@media (prefers-color-scheme: dark){
+	.backtop{background: rgba(10,10,12,0.55); box-shadow: 0 10px 36px rgba(0,0,0,0.55)}
+}
+
+.backtop:hover{transform: translateY(-1px)}
+.backtop:active{transform: translateY(0px)}
+.backtop span{opacity: 0.85}
+</style>
+</head>
+<body>
+	<a class="backtop" href="#top" aria-label="Обратно най-горе">
+		<span>↑</span> Горе
+	</a>
+
+	<div class="wrap" id="top">
+		<main class="card" role="main">
+			<header class="header">
+				<h1 class="title">София и трите ѝ дъщери</h1>
+				<p class="subtitle">Медитация</p>
+				<div class="rule" aria-hidden="true"></div>
+			</header>
+
+			
+		<nav class="toc" aria-label="Съдържание">
+			<div class="toc-label">Раздели</div>
+			<div class="toc-links">
+				<a href="#i">I.</a>
+<a href="#ii">II.</a>
+<a href="#iii">III.</a>
+<a href="#iv">IV.</a>
+<a href="#v">V.</a>
+			</div>
+		</nav>
+	
+
+			
+		<section class="section" id="i">
+			<div class="section-head">
+				<h2 class="section-num" aria-label="Раздел I">I.</h2>
+			</div>
+			<div class="section-body">
+				<p class="para first">Един млад мъж от бъдещето попадна на София на брега на една река.</p><p class="para">„Прочел съм много книги“, каза той. „Мога да обясня и назова много неща. Но щом затворя страницата, нещо в мен остава неспокойно. Не се чувствам мъдър.“</p><p class="para">София хвърли камък във водата. Двамата гледаха как кръговете се разгръщат и утихват.</p><p class="para">Надолу по течението една риба се сепна от вълна. Птица се стрелна надолу. Клон потрепери. Друг камък се откърти от брега и падна.</p><p class="para">Нови кръгове.</p><p class="para">София мълчеше. Младият мъж гледа дълго във водата. После вдигна очи.</p><p class="para">„Кой камък причини кои кръгове?“</p><p class="para">Тя се изправи. „Ела. Имам три дъщери.“</p>
+			</div>
+			<div class="divider" aria-hidden="true">◆&nbsp;&nbsp;◆&nbsp;&nbsp;◆</div>
+		</section>
+	
+		<section class="section" id="ii">
+			<div class="section-head">
+				<h2 class="section-num" aria-label="Раздел II">II.</h2>
+			</div>
+			<div class="section-body">
+				<p class="para first">В едно поле жена коленичеше в пръстта и садеше семена. Ръцете ѝ бяха груби. Усмихваше се.</p><p class="para">„Дъщеря ми Вяра“, каза София.</p><p class="para">Младият мъж наблюдаваше. „Откъде знае, че ще поникнат?“</p><p class="para">Вяра му подаде семенце. Той го взе. Дребно, сухо, безжизнено сякаш.</p><p class="para">Тя се върна към работата си.</p><p class="para">Той стоеше, със семенцето в дланта си. Беше толкова мъничко, че можеше да се скрие под нокътя му. След време той също коленичи и го посади в земята. Това изглеждаше неразумно, а коленете му вече бяха намерили пръстта. Не знаеше защо. Но ръцете му знаеха.</p><p class="para">Когато вдигна глава, Вяра все още се усмихваше.</p>
+			</div>
+			<div class="divider" aria-hidden="true">◆&nbsp;&nbsp;◆&nbsp;&nbsp;◆</div>
+		</section>
+	
+		<section class="section" id="iii">
+			<div class="section-head">
+				<h2 class="section-num" aria-label="Раздел III">III.</h2>
+			</div>
+			<div class="section-body">
+				<p class="para first">Жена гледаше залеза от прозореца на една къща. Оранжевото преливаше в пурпур.</p><p class="para">„Дъщеря ми Надежда“, каза София.</p><p class="para">„Какво гледа?“</p><p class="para">„Попитай я.“</p><p class="para">Той се приближи. „Какво виждаш?“</p><p class="para">Надежда не се обърна. „Още не знам.“</p><p class="para">Слънцето слизаше все по-ниско. Цветовете потъмняваха. Той се улови, че също се взира.</p><p class="para">„Слънцето изглежда сякаш умира“, каза той.</p><p class="para">Надежда не каза нищо. Гледаха, докато и последната светлина изчезна.</p><p class="para">В тъмнината тя най-сетне проговори. „Остани до сутринта“, каза. „Някои истини не идват, когато ги повикаш.“</p>
+			</div>
+			<div class="divider" aria-hidden="true">◆&nbsp;&nbsp;◆&nbsp;&nbsp;◆</div>
+		</section>
+	
+		<section class="section" id="iv">
+			<div class="section-head">
+				<h2 class="section-num" aria-label="Раздел IV">IV.</h2>
+			</div>
+			<div class="section-body">
+				<p class="para first">В лунна градина жена седеше сред цветята. Седеше и дишаше. Това беше всичко.</p><p class="para">„Дъщеря ми Любов“, каза София.</p><p class="para">Младият мъж се поколеба. Любов изглеждаше тъй в покой, че той се уплаши стъпките му да не я смутят.</p><p class="para">Тя отвори очи, усмихна се и потупа земята до себе си.</p><p class="para">Той седна.</p><p class="para">Една нощна пеперуда прехвръкна от цвят на цвят. Бухал се обади. Друг му отвърна. Луната се издигна по-високо.</p><p class="para">Той осъзна, че е спрял да мисли за миналото. Беше спрял да репетира бъдещето. Беше просто тук. Тази градина. Този момент.</p><p class="para">Любов откъсна цвете и му го подаде. Венчелистчетата бяха меки под пръстите му.</p><p class="para">Никой не проговори. Нямаше нужда нещо да се казва.</p>
+			</div>
+			<div class="divider" aria-hidden="true">◆&nbsp;&nbsp;◆&nbsp;&nbsp;◆</div>
+		</section>
+	
+		<section class="section" id="v">
+			<div class="section-head">
+				<h2 class="section-num" aria-label="Раздел V">V.</h2>
+			</div>
+			<div class="section-body">
+				<p class="para first">Върнаха се при реката. Водата вече беше тъмна, огледало на звездите. Две небеса: едно горе, едно долу.</p><p class="para">София взе три камъка и ги пусна, един по един. Кръговете се разтвориха, срещнаха се и изрисуваха шарки, които нито един камък не би могъл сам.</p><p class="para">Младият мъж гледаше.</p><p class="para">„Мисля, че разбирам“, каза той бавно. „Вяра се доверява на процеса. Надежда остава отворена за това, което той може да донесе. Любов участва в него докрай.“</p><p class="para">София изчака.</p><p class="para">„А ти“, започна той, после се спря. „Ти ми помагаш да видя самия процес.“</p><p class="para">Тя не каза нищо. Но в тишината ѝ имаше нещо, което звучеше като „да“.</p><p class="para">Той взе камък, претърколи го между пръстите си. „Дойдох тук, търсейки отговори извън процеса.“</p><p class="para">Пусна го във водата.</p><p class="para">„Но и аз съм в реката, нали?“</p><p class="para">Разсъмваше се. Небето премина от черно в синьо, от синьо в златно.</p><p class="para">Когато се обърна, София беше изчезнала.</p><p class="para">Или пък беше навсякъде: в светлината върху водата, в тишината между мислите му, в усещането да си жив в нова утрин.</p><p class="para">Той остана край реката още малко, гледайки как кръговете се стопяват.</p><p class="para">После се изправи и тръгна обратно към света.</p>
+			</div>
+			<div class="divider" aria-hidden="true">◆&nbsp;&nbsp;◆&nbsp;&nbsp;◆</div>
+		</section>
+	
+
+			<footer class="footer">
+				<div class="small">HTML версия, генерирана на 2025-12-27.</div>
+			</footer>
+		</main>
+	</div>
+
+	<script>
+(function(){
+	const btn = document.querySelector('.backtop');
+	const toggle = () => {
+		const y = window.scrollY || document.documentElement.scrollTop;
+		btn.style.opacity = y > 420 ? '1' : '0';
+		btn.style.pointerEvents = y > 420 ? 'auto' : 'none';
+	};
+	toggle();
+	window.addEventListener('scroll', toggle, {passive:true});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sophia and Her Three Daughters | Index</title>
+	<meta name="description" content="Read the parable in English or Bulgarian.">
+	<meta name="color-scheme" content="light dark">
+	<style>
+:root{
+	--bg: #f7f5f1;
+	--paper: rgba(255,255,255,0.78);
+	--ink: #161616;
+	--muted: rgba(22,22,22,0.72);
+	--hairline: rgba(22,22,22,0.14);
+	--accent: #2a5d86;
+	--shadow: 0 18px 60px rgba(0,0,0,0.10);
+	--radius: 18px;
+	--maxw: 760px;
+	--serif: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, Times, serif;
+	--sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark){
+	:root{
+		--bg: #0c0d10;
+		--paper: rgba(18,19,24,0.78);
+		--ink: #f2f2f2;
+		--muted: rgba(242,242,242,0.72);
+		--hairline: rgba(242,242,242,0.14);
+		--accent: #79b7ff;
+		--shadow: 0 18px 60px rgba(0,0,0,0.55);
+	}
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	background:
+		radial-gradient(1200px 600px at 15% 10%, rgba(42,93,134,0.14), transparent 55%),
+		radial-gradient(900px 500px at 90% 20%, rgba(215,121,32,0.10), transparent 60%),
+		radial-gradient(900px 500px at 70% 90%, rgba(70,160,120,0.10), transparent 60%),
+		var(--bg);
+	color: var(--ink);
+	font-family: var(--serif);
+	line-height: 1.65;
+	letter-spacing: 0.01em;
+}
+
+a{color: var(--accent); text-decoration: none}
+a:hover{text-decoration: underline}
+a:focus{outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 10px}
+
+.wrap{
+	max-width: calc(var(--maxw) + 64px);
+	margin: 0 auto;
+	padding: 40px 22px 60px;
+}
+
+.card{
+	max-width: var(--maxw);
+	margin: 0 auto;
+	padding: 46px 46px 34px;
+	background: var(--paper);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid var(--hairline);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+}
+
+@media (max-width: 720px){
+	.card{padding: 34px 22px 26px}
+	.wrap{padding: 26px 14px 44px}
+}
+
+.header{
+	text-align:center;
+	margin-bottom: 20px;
+}
+
+.title{
+	font-family: var(--serif);
+	font-weight: 600;
+	font-size: clamp(2.0rem, 3.4vw, 3.0rem);
+	letter-spacing: -0.01em;
+	margin: 0;
+}
+
+.subtitle{
+	font-family: var(--sans);
+	font-weight: 500;
+	color: var(--muted);
+	font-size: 1.05rem;
+	margin: 12px 0 0;
+}
+
+.rule{
+	width: 120px;
+	margin: 22px auto 10px;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, var(--hairline), transparent);
+}
+
+.buttons{
+	margin: 26px auto 10px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 14px;
+	max-width: 520px;
+}
+
+@media (max-width: 520px){
+	.buttons{grid-template-columns: 1fr}
+}
+
+.btn{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 14px 16px;
+	border-radius: 14px;
+	border: 1px solid var(--hairline);
+	background: rgba(255,255,255,0.12);
+	font-family: var(--sans);
+	font-size: 1.05rem;
+	color: var(--ink);
+	text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark){
+	.btn{background: rgba(0,0,0,0.22)}
+}
+
+.btn:hover{transform: translateY(-1px)}
+.btn:active{transform: translateY(0px)}
+.btn small{
+	display:block;
+	font-size: 0.85rem;
+	color: var(--muted);
+	margin-top: 2px;
+}
+
+.badge{
+	font-size: 0.85rem;
+	padding: 4px 10px;
+	border-radius: 999px;
+	border: 1px solid var(--hairline);
+	color: var(--muted);
+	white-space: nowrap;
+}
+
+.note{
+	margin: 18px auto 0;
+	max-width: 560px;
+	text-align: center;
+	color: var(--muted);
+	font-family: var(--sans);
+	font-size: 0.98rem;
+}
+
+.footer{
+	margin-top: 22px;
+	padding-top: 18px;
+	border-top: 1px solid var(--hairline);
+	color: var(--muted);
+	font-family: var(--sans);
+	font-size: 0.9rem;
+	text-align:center;
+}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<main class="card" role="main">
+			<header class="header">
+				<h1 class="title">Sophia and Her Three Daughters</h1>
+				<p class="subtitle">Choose a language / Изберете език</p>
+				<div class="rule" aria-hidden="true"></div>
+			</header>
+
+			<section class="buttons" aria-label="Language selection">
+				<a class="btn" href="sophia_and_her_three_daughters_eng.html" lang="en">
+					<div>
+						<div><strong>English</strong></div>
+						<small>Sophia and Her Three Daughters</small>
+					</div>
+					<div class="badge">ENG</div>
+				</a>
+
+				<a class="btn" href="sofia_i_trite_i_dashteri_bg.html" lang="bg" data-lang="bg">
+					<div>
+						<div><strong>Български</strong></div>
+						<small>София и трите ѝ дъщери</small>
+					</div>
+					<div class="badge">BG</div>
+				</a>
+			</section>
+
+			<footer class="footer">
+				<div>Generated 2025-12-27.</div>
+			</footer>
+		</main>
+	</div>
+
+	<script>
+(function() {
+	// Soft default: if browser language starts with 'bg', mark BG as recommended (no auto-redirect).
+	try {
+		const lang = (navigator.language || '').toLowerCase();
+		const bgBtn = document.querySelector('[data-lang="bg"]');
+		if(lang.startsWith('bg') && bgBtn) bgBtn.querySelector('.badge').textContent = 'recommended';
+	} catch(e) {}
+})();
+</script>
+</body>
+</html>
