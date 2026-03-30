@@ -1,7 +1,5 @@
 # Sophia and Her Three Daughters
 
-# Sophia and Her Three Daughters
-
 Днес мислих за числа, стигнах до ясна посока с неизвестни дестинации… и приказка.
 
 *Today I was thinking about numbers, found a clear direction with unknown destinations… and a parable.*
